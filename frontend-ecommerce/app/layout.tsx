@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "sonner";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
         >
           <NavBar />
           {children}
+          <Toaster />
           <Footer />
         </ThemeProvider>
       </body>

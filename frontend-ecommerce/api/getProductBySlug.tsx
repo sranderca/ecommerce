@@ -1,9 +1,9 @@
 import { ResultFilterTypes } from "@/types/filters";
 import { useEffect, useState } from "react";
 
-export function UseGetProductField() {
-  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/categories?filters[type][$eq]=material`;
-  const [result, setResult] = useState<ResultFilterTypes[] | null>(null);
+export function useGetProductBySlug(slug: string[] | string) {
+  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products?filters[slug][$eq]=${slug}&populate=*`;
+  const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 

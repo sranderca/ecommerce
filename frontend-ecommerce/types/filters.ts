@@ -1,5 +1,5 @@
 export type FilterTypes = {
-  result: ResultFilterTypes | null;
+  result: ResultFilterTypes[] | null;
   loading: boolean;
   error: string;
 };
