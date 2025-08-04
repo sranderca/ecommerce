@@ -17,14 +17,14 @@ const MenuList = () => {
     <NavigationMenu viewport={false}>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Sobre Nosotros</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+          <NavigationMenuTrigger className="bg-[#f9ecd2] text-[#b38b00]">Sobre Nosotros</NavigationMenuTrigger>
+          <NavigationMenuContent className="shadow-lg rounded-md z-50">
+            <ul className="grid gap-3 p-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
-                  <a className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md">
+                  <a className="flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md">
                     <div className="mt-4 mb-2 text-lg font-medium">
-                      AnderDev
+                      Lac.R
                     </div>
                     <p className="text-muted-foreground text-sm leading-tight">
                       Todo para vestir tu hogar con amor y estilo.
@@ -42,8 +42,8 @@ const MenuList = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Productos</NavigationMenuTrigger>
-          <NavigationMenuContent>
+          <NavigationMenuTrigger className="bg-[#f9ecd2] text-[#b38b00]">Productos</NavigationMenuTrigger>
+          <NavigationMenuContent className="bg-white shadow-lg rounded-md p-4 z-50">
             <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
                 <ListItem

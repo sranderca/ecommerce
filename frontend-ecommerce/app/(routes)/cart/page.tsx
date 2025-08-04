@@ -19,7 +19,7 @@ export default function Page() {
           {items.length == 0 && <p>No hay productos en el carrito</p>}
           <ul>
             {items.map((item) => (
-              <CartItem key={item.id} product={item}/>
+              <CartItem key={item.id} product={item} />
             ))}
           </ul>
         </div>
@@ -32,7 +32,9 @@ export default function Page() {
               <p>{formatPrice(totalPrice)}</p>
             </div>
             <div className="flex items-center justify-between w-full mt-3">
-              <Button className="w-full" onClick={() => console.log("Buy")}>Comprar</Button>
+              <Button className="w-full" onClick={() => console.log("Buy")}>
+                Comprar
+              </Button>
             </div>
           </div>
         </div>
