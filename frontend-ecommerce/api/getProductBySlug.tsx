@@ -1,3 +1,4 @@
+import { ResultFilterTypes } from "@/types/filters";
 import { useEffect, useState } from "react";
 
 export function useGetProductBySlug(slug: string[] | string) {

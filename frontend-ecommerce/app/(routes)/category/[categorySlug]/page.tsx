@@ -3,7 +3,7 @@
 import { UseGetCategoryProduct } from "@/api/getCategoryProduct";
 import { Separator } from "@/components/ui/separator";
 import { ResponseType } from "@/types/response";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import FiltersControlsCategory from "./components/filters-controls-category";
 import SkeletonSchema from "@/components/skeletonSchema";
 import ProductCard from "./components/product-card";
@@ -14,9 +14,10 @@ export default function Page() {
   const params = useParams();
   const categorySlug = params?.categorySlug as string | undefined;
   const { result, loading }: ResponseType = UseGetCategoryProduct(
-    categorySlug ?? ""
+    categorySlug ?? "",
   );
   const [filterMaterial, setFilterMaterial] = useState("");
+  const router = useRouterRouter();
 
   const filteredProducts =
     result !== null &&
@@ -24,7 +25,7 @@ export default function Page() {
     (filterMaterial == ""
       ? result
       : result.filter(
-          (product: ProductType) => product.material.slug === filterMaterial
+          (product: ProductType) => product.material.slug === filterMaterial,
         ));
 
   return (
