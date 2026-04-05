@@ -17,7 +17,7 @@ export default function Page() {
     categorySlug ?? "",
   );
   const [filterMaterial, setFilterMaterial] = useState("");
-  const router = useRouterRouter();
+  const router = useRouter();
 
   const filteredProducts =
     result !== null &&
