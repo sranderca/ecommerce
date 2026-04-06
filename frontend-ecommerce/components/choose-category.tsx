@@ -16,7 +16,7 @@ const ChooseCategory = () => {
       </h3>
       <div className="grid gap-5 sm:grid-cols-3">
         {!loading &&
-          result !== undefined &&
+          result &&
           result.map((category: CategoryType) => (
             <Link
               key={category.id}
@@ -24,7 +24,7 @@ const ChooseCategory = () => {
               className="relative max-w-xs mx-auto overflow-hidden bg-no-repeat bg-cover rounded-lg"
             >
               <img
-                src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${category.mainimage.url}`}
+                src={category.mainimage?.url}
                 alt={category.categoryName}
                 className="max-w-[270px] transition duration-300 ease-in-out rounded-lg hover:scale-110"
               />

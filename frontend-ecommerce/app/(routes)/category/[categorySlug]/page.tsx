@@ -3,7 +3,7 @@
 import { UseGetCategoryProduct } from "@/api/getCategoryProduct";
 import { Separator } from "@/components/ui/separator";
 import { ResponseType } from "@/types/response";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import FiltersControlsCategory from "./components/filters-controls-category";
 import SkeletonSchema from "@/components/skeletonSchema";
 import ProductCard from "./components/product-card";
@@ -17,7 +17,6 @@ export default function Page() {
     categorySlug ?? "",
   );
   const [filterMaterial, setFilterMaterial] = useState("");
-  const router = useRouter();
 
   const filteredProducts =
     result !== null &&
@@ -41,7 +40,7 @@ export default function Page() {
 
         <div className="grid gap-5 mt-8 sm:grid-cols-2 md:grid-cols-3 md:gap-10">
           {loading && <SkeletonSchema grid={3} />}
-          {filteredProducts !== null &&
+          {Array.isArray(filteredProducts) &&
             !loading &&
             filteredProducts.map((product: ProductType) => (
               <ProductCard key={product.id} product={product} />
